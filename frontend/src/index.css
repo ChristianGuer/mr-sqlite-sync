@@ -1,0 +1,226 @@
+:root {
+  --bg: #0d0d0f;
+  --surface: #1a1a1f;
+  --border: #2a2a32;
+  --accent: #e8312a;
+  --text: #e8e8ec;
+  --muted: #6b6b7a;
+  --vanguard: #4a9eff;
+  --duelist: #e8312a;
+  --strategist: #4adc7a;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+header {
+  padding: 24px 32px;
+  border-bottom: 1px solid var(--border);
+}
+
+header h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+header h1 span { color: var(--accent); }
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+.section-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+.role-group { margin-bottom: 24px; }
+
+.role-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.role-title.Vanguard   { color: var(--vanguard); }
+.role-title.Duelist    { color: var(--duelist); }
+.role-title.Strategist { color: var(--strategist); }
+
+.hero-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.hero-chip {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.82rem;
+  cursor: pointer;
+  user-select: none;
+  transition: border-color 0.12s, background 0.12s, opacity 0.12s;
+  white-space: nowrap;
+}
+
+.hero-chip:hover:not(.disabled) { border-color: var(--muted); }
+
+.hero-chip.selected {
+  border-color: var(--accent);
+  background: rgba(232, 49, 42, 0.15);
+  color: #fff;
+}
+
+.hero-chip.disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.action-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.selected-count {
+  font-size: 0.85rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.selected-count span { color: var(--text); font-weight: 600; }
+
+.selected-names {
+  flex: 1;
+  font-size: 0.82rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+button {
+  padding: 10px 24px;
+  border-radius: 6px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: opacity 0.12s;
+  white-space: nowrap;
+}
+
+button:disabled { opacity: 0.3; cursor: default; }
+button:not(:disabled):hover { opacity: 0.85; }
+
+.btn-clear {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.8rem;
+  padding: 8px 16px;
+}
+
+.results { margin-top: 40px; }
+
+.result-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: 28px 1fr auto;
+  gap: 14px;
+  align-items: center;
+}
+
+.result-rank {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--muted);
+  text-align: center;
+}
+
+.result-rank.top { color: var(--accent); font-size: 1rem; }
+
+.result-name {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.result-bar-wrap {
+  background: var(--border);
+  border-radius: 4px;
+  height: 5px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.result-bar {
+  height: 100%;
+  border-radius: 4px;
+  background: var(--accent);
+}
+
+.result-meta {
+  font-size: 0.75rem;
+  color: var(--muted);
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background: rgba(255,255,255,0.05);
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+
+.tag.warn { color: #f0a020; }
+
+.result-score {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.msg {
+  text-align: center;
+  padding: 40px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.error {
+  color: #e85050;
+  background: rgba(232, 80, 80, 0.08);
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+}

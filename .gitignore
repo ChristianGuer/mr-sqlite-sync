@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Secrets — never commit real credentials
+.env
+.env.local
+
+# Local SQLite database (regenerate with `npm run sync`)
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+
+# Build output
+dist/
+build/
+
+# Logs / editor / OS cruft
+*.log
+npm-debug.log*
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
